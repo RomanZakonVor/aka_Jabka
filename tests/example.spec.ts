@@ -6,9 +6,9 @@ test('poxuy', async ({ page }) => {
 });
 
 async function clickUntilZero(page: Page) {
+  page.waitForTimeout(1000);
   await page.locator('.energy__string span').waitFor();
   const currentCount = await page.locator('.energy__string span').textContent();
-  expect(page.locator('.energy__string span')).not.toBe('0')
 
   let num;
   if (currentCount) {

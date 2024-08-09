@@ -15,7 +15,7 @@ export default defineConfig({
   use: {
     video: 'on',
     extraHTTPHeaders: {
-      'Authorization': token,
+      'Authorization': token, 
     }
   },
 

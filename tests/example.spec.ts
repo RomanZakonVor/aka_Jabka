@@ -6,10 +6,10 @@ test('poxuy', async ({ page }) => {
 });
 
 async function clickUntilZero(page: Page) {
-  await page.waitForTimeout(3000);
-  await page.locator('.energy__string span').waitFor();
+  await expect(page.locator('.energy__string span')).toBeVisible();
   const currentCount = await page.locator('.energy__string span').textContent();
-
+  console.log(currentCount);
+  
   let num;
   if (currentCount) {
       const numericString = currentCount.replace(/\s+/g, '');
@@ -21,4 +21,3 @@ async function clickUntilZero(page: Page) {
     num--;
   }
 }
-

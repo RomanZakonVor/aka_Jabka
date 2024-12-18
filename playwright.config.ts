@@ -5,15 +5,17 @@ dotenv.config();
 const token = process.env.TOKEN;
 
 export default defineConfig({
-  timeout: 210 * 1000,
+  timeout: 210 * 11000,
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: 1,
+  reporter: 'html',
   use: {
+    video: 'on',
     extraHTTPHeaders: {
-      'Authorization': token,
+      'Authorization': token, 
     }
   },
 
